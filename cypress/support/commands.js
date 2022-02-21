@@ -35,7 +35,8 @@ import DateUtils from "./DateUtils/DateUtils";
     const currentYear = new Date().getFullYear()
 
     datePickerPage.getYearName().then(($year)=> {
-        if ($year.text()==yearName){
+        console.log($year.text())
+        if ($year.text()===yearName){
             cy.log(yearName + 'year is selected')
             return
         }
@@ -75,3 +76,4 @@ Cypress.Commands.add('selectDay', (dayName)=>{
     cy.log(dayName + 'day is selected')
 })
 
+require('@4tw/cypress-drag-drop')
