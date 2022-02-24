@@ -14,14 +14,15 @@ describe("Demo QA widgets test", () => {
         cy.get(".col-12.mt-4.col-md-6")
             .should("contain.text", "Please select an item from left to start practice.")
     });
-        it('Widgets > Date Picker', function () {
-
-            cy.contains("Date Picker").click();
-            cy.location("pathname").should("equal", "/date-picker");
-            datePickerPage.getDatePicker().click()
-            datePickerPage.getCalendar().should('be.visible');
-            cy.get(".react-datepicker__day--014").click();
-            });
+    // datePickerPage.getCalendar().should('be.visible');
+    it('Widgets > Date Picker', function () {
+        cy.contains("Date Picker").click();
+        cy.location("pathname").should("equal", "/date-picker");
+        datePickerPage.getDatePicker().click()
+        cy.selectYear ("2024")
+        cy.selectMonth ('March')
+        cy.selectDay ("12")
+    });
 
         it('Widgets > slider', function () {
 
@@ -57,11 +58,7 @@ describe("Demo QA widgets test", () => {
 
 
     });
-    // it('select date ', function () {
-    //     cy.selectYear ("2023")
-    //     cy.selectMonth ('January')
-    //     cy.selectDay ("14")
-    // });
+
         it('Widgets > Menu ', function () {
             cy.contains("Menu").click()
             cy.location("pathname").should("equal","/menu")

@@ -12,13 +12,13 @@ class DatePickerPage {
         return cy.get('.react-datepicker__navigation--next')
     }
     getMonthName(){
-        return cy.get('.react-datepicker__month-select')
+        return cy.get('.react-datepicker__month-select').find('option:selected')
     }
     getYearName(){
-        return cy.get('.react-datepicker__year-select')
+        return cy.get('.react-datepicker__year-select').find('option:selected')
     }
-    getCalendarDays(){
-        return cy.get('.react-datepicker__day')
+    getCalendarDays(day){
+        return cy.get(`.react-datepicker__day--0${day}`)
     }
 }
 export default DatePickerPage
