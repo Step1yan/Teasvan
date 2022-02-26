@@ -21,7 +21,7 @@ describe("Demo QA widgets test", () => {
         datePickerPage.getDatePicker().click()
         cy.selectYear ("2024")
         cy.selectMonth ('March')
-        cy.selectDay ("12")
+        cy.selectDay ("09")
     });
 
         it('Widgets > slider', function () {

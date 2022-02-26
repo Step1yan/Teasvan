@@ -6,6 +6,7 @@ class RegisterPage{
     companyName = faker.company.companyName()
     email = faker.internet.email()
     pass = faker.internet.password()
+
     getRegistorBtn(){
         return cy.get('.ico-register')
     }
@@ -51,6 +52,10 @@ class RegisterPage{
     getContinueReg(){
         return cy.get(".buttons > .button-1")
     }
+    getLogoutBtn(){
+        return cy.get('.ico-logout')
+    }
+    //@todo errors
     getFillFirstlEr(){
         return cy.get("#FirstName-error")
 
@@ -73,5 +78,9 @@ class RegisterPage{
     getResult(){
        return  cy.get(".result")
     }
+    getMessageErr(){
+        return cy.get('.message-error')
+    }
+
 }
 export default RegisterPage

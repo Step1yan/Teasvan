@@ -6,5 +6,8 @@ class LoginPage{
     getLoginBttn(){
        return cy.get(".login-button")
 }
+getMessageEr2Row(){
+        return cy.get('.message-error > ul > li')
+}
 }
 export default LoginPage
